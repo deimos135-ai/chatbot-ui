@@ -157,7 +157,7 @@ export default function WorkspaceLayout({ children }: WorkspaceLayoutProps) {
     setModels(modelData.models)
 
     setChatSettings({
-      model: (searchParams.get("model") ||
+      model: (searchParams?.get("model") ||
         workspace?.default_model ||
         "gpt-4-1106-preview") as LLMID,
       prompt:
