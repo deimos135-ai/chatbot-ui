@@ -20,9 +20,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const data = await response.json();
     res.status(response.status).json(data);
   } catch (error: any) {
-    res.status(500).json({
-      error: 'Server error',
-      details: error.message || error.toString(),
-    });
+    console.error('[API_CHAT_ERROR]', error);
+    res.status(500).json({ error: 'Server error', details: error.message });
   }
 }
+
