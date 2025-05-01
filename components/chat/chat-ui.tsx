@@ -151,7 +151,7 @@ export const ChatUI: FC<ChatUIProps> = ({}) => {
   }
 
   const fetchChat = async () => {
-    const chat = await getChatById(params.chatid as string)
+    const chat = await getChatById(params?.chatid as string)
     if (!chat) return
 
     if (chat.assistant_id) {
